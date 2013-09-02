@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+						xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+	<!-- This example uses a Dynamic Node Provider to populate the nodes including the edit and delete nodes. This populates
+	all HTML helpers and the /sitemap.xml endpoint with the data from the database. Always use this method for pages you need indexed in search engines. -->
+	<mvcSiteMapNode title="Home" controller="Home" action="Index">
+		<mvcSiteMapNode title="About" controller="Home" action="About"/>
+		<mvcSiteMapNode title="Products" controller="Product" action="Index" key="Products">
+			<mvcSiteMapNode title="Create New" controller="Product" action="Create" visibility="SiteMapPathHelper,!*" />
+			<mvcSiteMapNode title="DynamicProducts" visibility="SiteMapPathHelper,!*" dynamicNodeProvider="MvcSiteMapProvider_CRUD_Example.SiteMapProvider.ProductDynamicNodeProvider, MvcSiteMapProvider-CRUD-Example"/>
+		</mvcSiteMapNode>
+		<mvcSiteMapNode title="Sitemaps XML" url="/sitemap.xml" visibility="!XmlSiteMapResult,*"/>
+	</mvcSiteMapNode>
+
+</mvcSiteMap>

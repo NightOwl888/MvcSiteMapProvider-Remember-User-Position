@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+						xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+	<!-- This example uses code to set the values of Details, Edit and Delete nodes. You must disable URL resolution caching
+	in order to use this method. In this example we did it in the web.config file, but we could have also done it on each node
+	by setting cacheResolvedUrl="false" on each node. This 
+	method is only acceptable if you do not need the Menu to navigate because you are using an alternate form of navigation, 
+	such as a database populated list or table. The pages will not appear in the /sitemap.xml endpoint, so never use this 
+	type of configuration if it is important the pages are indexed by search engines. -->
+	<mvcSiteMapNode title="Home" controller="Home" action="Index">
+		<mvcSiteMapNode title="About" controller="Home" action="About"/>
+		<mvcSiteMapNode title="Products" controller="Product" action="Index">
+			<mvcSiteMapNode title="Create New" controller="Product" action="Create" visibility="SiteMapPathHelper,!*" cacheResolvedUrl="false" />
+			<mvcSiteMapNode title="Details" controller="Product" action="Details" visibility="SiteMapPathHelper,!*" key="Product_Details">
+				<mvcSiteMapNode title="Edit" controller="Product" action="Edit" visibility="SiteMapPathHelper,!*" key="Product_Edit"/>
+				<mvcSiteMapNode title="Delete" controller="Product" action="Delete" visibility="SiteMapPathHelper,!*" key="Product_Delete"/>
+			</mvcSiteMapNode>
+		</mvcSiteMapNode>
+		<mvcSiteMapNode title="Sitemaps XML" url="/sitemap.xml" visibility="!XmlSiteMapResult,*"/>
+	</mvcSiteMapNode>
+
+</mvcSiteMap>

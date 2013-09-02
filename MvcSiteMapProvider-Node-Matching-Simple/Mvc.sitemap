@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+						xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+	<mvcSiteMapNode title="Home" controller="Home" action="Index">
+		<mvcSiteMapNode title="About" controller="Home" action="About"/>
+		<mvcSiteMapNode title="Contact" controller="Home" action="Contact"/>
+		<mvcSiteMapNode title="Products" controller="Products" action="Index">
+			<mvcSiteMapNode title="AA Battery" action="Details" id="1"/>
+			<mvcSiteMapNode title="Raincoat" action="Details" id="2"/>
+			<mvcSiteMapNode title="Boots" action="Details" id="3"/>
+			<mvcSiteMapNode title="Waterproof Matches" action="Details" id="4"/>
+			<mvcSiteMapNode title="Flashlight" action="Details" id="5"/>
+		</mvcSiteMapNode>
+		<mvcSiteMapNode title="Sitemaps XML" url="/sitemap.xml"/>
+	</mvcSiteMapNode>
+	
+</mvcSiteMap>

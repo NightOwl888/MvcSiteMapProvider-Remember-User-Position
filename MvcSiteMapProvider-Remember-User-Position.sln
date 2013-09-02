@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSiteMapProvider-Remember-User-Position", "MvcSiteMapProvider-Remember-User-Position\MvcSiteMapProvider-Remember-User-Position.csproj", "{5127F4CB-C71D-4322-8D88-E5824742655A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{676D006E-9352-4503-B32A-69FC56F890EC}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -10,16 +8,36 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{676D00
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSiteMapProvider-Node-Matching-Simple", "MvcSiteMapProvider-Node-Matching-Simple\MvcSiteMapProvider-Node-Matching-Simple.csproj", "{6E7D3941-6979-47E3-BB56-9DA8BC096E94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSiteMapProvider-Node-Matching-Dynamic-Nodes", "MvcSiteMapProvider-Node-Matching-Dynamic-Nodes\MvcSiteMapProvider-Node-Matching-Dynamic-Nodes.csproj", "{FF3AFD00-21BB-4DCC-82C3-0C91920B68D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSiteMapProvider-Forcing-A-Match", "MvcSiteMapProvider-Forcing-A-Match\MvcSiteMapProvider-Forcing-A-Match.csproj", "{E29FBE76-FD68-47A9-8C50-DE6EE5131BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSiteMapProvider-Forcing-A-Match-In-Code", "MvcSiteMapProvider-Forcing-A-Match-In-Code\MvcSiteMapProvider-Forcing-A-Match-In-Code.csproj", "{ADB6BD26-53EE-45FA-968F-BF30D74C9601}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5127F4CB-C71D-4322-8D88-E5824742655A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5127F4CB-C71D-4322-8D88-E5824742655A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5127F4CB-C71D-4322-8D88-E5824742655A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5127F4CB-C71D-4322-8D88-E5824742655A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E7D3941-6979-47E3-BB56-9DA8BC096E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7D3941-6979-47E3-BB56-9DA8BC096E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7D3941-6979-47E3-BB56-9DA8BC096E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7D3941-6979-47E3-BB56-9DA8BC096E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3AFD00-21BB-4DCC-82C3-0C91920B68D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3AFD00-21BB-4DCC-82C3-0C91920B68D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3AFD00-21BB-4DCC-82C3-0C91920B68D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3AFD00-21BB-4DCC-82C3-0C91920B68D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29FBE76-FD68-47A9-8C50-DE6EE5131BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29FBE76-FD68-47A9-8C50-DE6EE5131BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29FBE76-FD68-47A9-8C50-DE6EE5131BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29FBE76-FD68-47A9-8C50-DE6EE5131BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB6BD26-53EE-45FA-968F-BF30D74C9601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB6BD26-53EE-45FA-968F-BF30D74C9601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB6BD26-53EE-45FA-968F-BF30D74C9601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB6BD26-53EE-45FA-968F-BF30D74C9601}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
