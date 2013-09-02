@@ -1,4 +1,4 @@
 MvcSiteMapProvider-Remember-User-Position
 =========================================
 
-Code example for MvcSiteMapProvider 4.0 - Unit Testing with the SiteMaps Static Methods located at http://www.shiningtreasures.com/post/2013/08/14/mvcsitemapprovider-4-unit-testing-with-the-sitemaps-static-methods
+Code example for How to Make MvcSiteMapProvider Remember a User's Position located at http://www.shiningtreasures.com/post/2013/09/03/how-to-make-mvcsitemapprovider-remember-a-user-position
