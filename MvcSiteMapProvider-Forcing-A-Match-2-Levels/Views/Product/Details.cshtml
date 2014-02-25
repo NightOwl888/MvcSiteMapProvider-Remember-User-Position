@@ -1,0 +1,49 @@
+﻿@model MvcSiteMapProvider_CRUD_Example.Entity.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Product</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductOptions)
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Create New", "Create", "ProductOption", new { productId=Model.Id }, null)</td>
+            <td></td>
+        </tr>
+    
+    @foreach (var productOption in Model.ProductOptions)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => productOption.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "ProductOption", new { productId=Model.Id, productOptionId=productOption.Id }, null) |
+                @*@Html.ActionLink("Details", "Details", "ProductOption", new { productId=Model.Id, productOptionId=productOption.Id }, null) |*@
+                @Html.ActionLink("Delete", "Delete", "ProductOption", new { productId=Model.Id, productOptionId=productOption.Id }, null)
+            </td>
+        </tr>
+    }
+    </table>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productId=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

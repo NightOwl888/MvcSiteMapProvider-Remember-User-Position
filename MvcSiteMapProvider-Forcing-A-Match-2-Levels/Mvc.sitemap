@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <!-- This example demonstrates how to use preservedRouteParameters to use a common set of nodes that represent 2 levels 
+  of entites in a parent-child hierarchy. It is important that the route values that could be used on the same view 
+  use different key names (shown here as productId and productOptionId) so they can both be copied from the current 
+  request when needed, and so ancestor nodes don't accidentally get the key values from child nodes. preservedRouteParameters 
+  saves nothing between requests - only the current request can be used to build the breadcrumb trail. Therefore, 
+  all parameters must be in the route values of the current request in order for it to function. This is done here by taking care 
+  to include the parameters whenever an ActionLink is created or a view is returned from a controller. 
+  
+  You may have more levels than just 2, but this demo should give you the tools you need to create as many levels
+  as you need on your administration pages. Just keep in mind when using preservedRouteParameters that all 
+  descendant nodes need to keep track of their ancestor's route values or the navigation will fall apart.
+  
+  The pages will not appear in the /sitemap.xml endpoint, so never use this type of configuration if it is 
+  important the pages are indexed by search engines. -->
+  <mvcSiteMapNode title="Home" controller="Home" action="Index">
+    <mvcSiteMapNode title="About" controller="Home" action="About"/>
+    
+    <!-- Products -->
+    <mvcSiteMapNode title="Products" controller="Product" action="Index">
+      <mvcSiteMapNode title="Create New" action="Create" visibility="SiteMapPathHelper,!*" />
+      <mvcSiteMapNode title="Details" action="Details" visibility="SiteMapPathHelper,!*" preservedRouteParameters="productId">
+        <mvcSiteMapNode title="Edit" action="Edit" visibility="SiteMapPathHelper,!*" key="Product_Edit" preservedRouteParameters="productId"/>
+        <mvcSiteMapNode title="Delete" action="Delete" visibility="SiteMapPathHelper,!*" preservedRouteParameters="productId"/>
+
+        <!-- Product Options -->
+        <mvcSiteMapNode title="Product Options" controller="ProductOption" clickable="false" visibility="!*">
+          <mvcSiteMapNode title="Create New Option" action="Create" visibility="SiteMapPathHelper,!*" preservedRouteParameters="productId"/>
+          <mvcSiteMapNode title="Details" action="Details" clickable="false" visibility="SiteMapPathHelper,!*" preservedRouteParameters="productId,productOptionId">
+            <mvcSiteMapNode title="Edit" action="Edit" visibility="SiteMapPathHelper,!*" preservedRouteParameters="productId,productOptionId"/>
+            <mvcSiteMapNode title="Delete" action="Delete" visibility="SiteMapPathHelper,!*" preservedRouteParameters="productId,productOptionId"/>
+          </mvcSiteMapNode>
+        </mvcSiteMapNode>
+        
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Sitemaps XML" url="/sitemap.xml" visibility="!XmlSiteMapResult,*"/>
+  </mvcSiteMapNode>
+
+</mvcSiteMap>
